@@ -118,7 +118,7 @@ sudo yum install ncurses-* flex byacc bison zlib-* gmp-* mpfr-* gettext \
 
 * 克隆源码
 ```shell
-git clone --depth=1 https://github.com/Yutsuki92/vb1980-Padavan3.4.git /opt/rt-n56u
+sudo git clone --depth=1 https://github.com/Yutsuki92/vb1980-Padavan3.4.git /opt/rt-n56u
 ```
 
 * 准备工具链
@@ -140,7 +140,7 @@ nano /opt/rt-n56u/trunk/configs/templates/PSG1218.config
 ```shell
 cd /opt/rt-n56u/trunk
 # 对于WSL环境，建议使用sudo进行编译，或者使用fakeroot-tcp代替fakeroot
-fakeroot ./build_firmware_modify PSG1218
+fakeroot ./build_firmware_modify K2P
 # 脚本第一个参数为路由型号，在trunk/configs/templates/中
 # 编译好的固件在trunk/images里
 # 首次编译完成后，如果需要再次编译其它固件，需要执行清理脚本：
