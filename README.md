@@ -33,266 +33,120 @@ wifi密码
 - https://github.com/hanwckf/padavan-4.4
 - https://github.com/MeIsReallyBa/padavan-4.4
 
-​
-26
 ### 特别说明 ###
-27
-* 汉化字典来自：https://github.com/gorden5566/padavan
-28
+ 汉化字典来自：https://github.com/gorden5566/padavan
 * 更新日志：https://www.jianshu.com/p/d76a63a12eae
-29
-​
-30
-***
-31
-​
-32
 ### 固件特点 ###
-33
 - 使用[gorden5566](https://github.com/gorden5566/padavan)的汉化字典
-34
 - aria2前端更换为[AriaNg](https://github.com/mayswind/AriaNg)
-35
 - [curl](https://github.com/curl/curl)可选编译可执行程序 ```CONFIG_FIRMWARE_INCLUDE_CURL```
-36
 - 使用了[PROMETHEUS](http://pm.freize.net/index.html)提供的部分补丁
-37
 - 使用了[Linaro1985/padavan-ng](https://gitlab.com/padavan-ng/padavan-ng)的部分软件包
-38
 - 可选以下插件：
-39
 >- [scutclient](https://github.com/hanwckf/scutclient) ```CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT```
-40
 >- [gdut-drcom](https://github.com/chenhaowen01/gdut-drcom) ```CONFIG_FIRMWARE_INCLUDE_GDUT_DRCOM```
-41
 >- [dogcom](https://github.com/hanwckf/dogcom) ```CONFIG_FIRMWARE_INCLUDE_DOGCOM```
-42
 >- [minieap](https://github.com/hanwckf/minieap) ```CONFIG_FIRMWARE_INCLUDE_MINIEAP```
-43
 >- [njit-client](https://github.com/hanwckf/njit8021xclient) ```CONFIG_FIRMWARE_INCLUDE_NJIT_CLIENT```
-44
 >- [napt66](https://github.com/mzweilin/napt66) ```CONFIG_FIRMWARE_INCLUDE_NAPT66```
-45
 >- [softether-vpnserver](https://github.com/SoftEtherVPN/SoftEtherVPN_Stable) ```CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_SERVER```
-46
 >- [softether-vpnclient](https://github.com/SoftEtherVPN/SoftEtherVPN_Stable) ```CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CLIENT```
-47
 >- [softether-vpncmd](https://github.com/SoftEtherVPN/SoftEtherVPN_Stable) ```CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CMD```
-48
 >- [vlmcsd](https://github.com/hanwckf/vlmcsd) ```CONFIG_FIRMWARE_INCLUDE_VLMCSD```
-49
 >- [ttyd](https://github.com/tsl0922/ttyd) ```CONFIG_FIRMWARE_INCLUDE_TTYD```
-50
 >- [lrzsz](https://ohse.de/uwe/software/lrzsz.html) ```CONFIG_FIRMWARE_INCLUDE_LRZSZ```
-51
 >- [htop](https://hisham.hm/htop/releases/) ```CONFIG_FIRMWARE_INCLUDE_HTOP```
-52
 >- [nano](https://www.nano-editor.org/dist/) ```CONFIG_FIRMWARE_INCLUDE_NANO```
-53
 >- [iperf3](https://github.com/esnet/iperf) ```CONFIG_FIRMWARE_INCLUDE_IPERF3```
-54
 >- [dump1090](https://github.com/hanwckf/dump1090) ```CONFIG_FIRMWARE_INCLUDE_DUMP1090```
-55
 >- [rtl-sdr](https://github.com/osmocom/rtl-sdr) ```CONFIG_FIRMWARE_INCLUDE_RTL_SDR```
-56
 >- [samba3.6](https://gitlab.com/padavan-ng/padavan-ng/tree/master/trunk/user/samba36) ```CONFIG_FIRMWARE_INCLUDE_SMBD36```
-57
 >- [mtr](https://github.com/traviscross/mtr) ```CONFIG_FIRMWARE_INCLUDE_MTR```
-58
 >- [socat](http://www.dest-unreach.org/socat) ```CONFIG_FIRMWARE_INCLUDE_SOCAT```
-59
 >- [srelay](https://socks-relay.sourceforge.io) ```CONFIG_FIRMWARE_INCLUDE_SRELAY```
-60
 >- [3proxy](https://github.com/z3APA3A/3proxy) ```CONFIG_FIRMWARE_INCLUDE_3PROXY```
-61
 >- [mentohust](https://github.com/hanwckf/mentohust-1) ```CONFIG_FIRMWARE_INCLUDE_MENTOHUST```
-62
 >- [frpc](https://github.com/fatedier/frp) ```CONFIG_FIRMWARE_INCLUDE_FRPC```
-63
 >- [frps](https://github.com/fatedier/frp) ```CONFIG_FIRMWARE_INCLUDE_FRPS```
-64
 >- [tunsafe](https://github.com/TunSafe/TunSafe) ```CONFIG_FIRMWARE_INCLUDE_TUNSAFE```
-65
 >- [wireguard-go](https://git.zx2c4.com/wireguard-go/) ```CONFIG_FIRMWARE_INCLUDE_WIREGUARD```
-66
 >- [smartdns](https://github.com/pymumu/smartdns) ```CONFIG_FIRMWARE_INCLUDE_SMARTDNS```
-67
-​​
-117
+
+#
 * 安装依赖包
-118
-​
-119
 ```shell
-120
 # Debian/Ubuntu
-121
 sudo apt update
-122
 sudo apt install unzip libtool-bin curl cmake gperf gawk flex bison nano xxd \
-123
         fakeroot kmod cpio git python3-docutils gettext automake autopoint \
-124
         texinfo build-essential help2man pkg-config zlib1g-dev libgmp3-dev \
-125
         libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget libc-dev-bin
-126
-​
-127
+        
 # Archlinux/Manjaro
-128
 sudo pacman -Syu --needed git base-devel cmake gperf ncurses libmpc \
-129
         gmp python-docutils vim rpcsvc-proto fakeroot cpio help2man
-130
-​
-131
+        
 # Alpine
-132
 sudo apk add make gcc g++ cpio curl wget nano xxd kmod \
-133
         pkgconfig rpcgen fakeroot ncurses bash patch \
-134
         bsd-compat-headers python2 python3 zlib-dev \
-135
         automake gettext gettext-dev autoconf bison \
-136
         flex coreutils cmake git libtool gawk sudo
-137
-​
-138
+        
 # CentOS 7
-139
 sudo yum update
-140
 sudo yum groupinstall "Development Tools"
-141
 sudo yum install ncurses-* flex byacc bison zlib-* texinfo gmp-* mpfr-* gettext \
-142
         libtool* libmpc-* gettext-* python-docutils nano help2man fakeroot
-143
-​
-144
+        
 # CentOS 8
-145
 sudo yum update
-146
 sudo yum groupinstall "Development Tools"
-147
 sudo yum install ncurses-* flex byacc bison zlib-* gmp-* mpfr-* gettext \
-148
         libtool* libmpc-* gettext-* nano fakeroot
-149
-​
-150
 # CentOS 8不能直接通过yum安装texinfo，help2man，python-docutils。请去官网下载发行的安装包编译安装
-151
 # 以texinfo为例
-152
 # cd /usr/local/src
-153
 # sudo wget http://ftp.gnu.org/gnu/texinfo/texinfo-6.7.tar.gz
-154
 # sudo tar zxvf texinfo-6.7.tar.gz
-155
 # cd texinfo-6.7
-156
 # sudo ./configure
-157
 # sudo make
-158
 # sudo make install
-159
-​
-160
 ```
-161
-​​
-162
+
+
 * 克隆源码
-163
-​
-164
 ```shell
-165
-git clone --depth=1 https://e.coding.net/hanwckf/rt-n56u/padavan.git /opt/rt-n56u
-166
-#git clone --depth=1 https://github.com/hanwckf/rt-n56u.git /opt/rt-n56u
-167
+git clone --depth=1 https://github.com/Yutsuki92/vb1980-Padavan3.4.git /opt/rt-n56u
 ```
-168
-​
-169
+
 * 准备工具链
-170
-​
-171
 ```shell
-172
 cd /opt/rt-n56u/toolchain-mipsel
-173
-​
-174
 # （推荐）使用脚本下载预编译的工具链：
-175
 sh dl_toolchain.sh
-176
-​
-177
 # 或者，也可以从源码编译工具链，这需要一些时间：
-178
 ./clean_toolchain
-179
 ./build_toolchain
-180
-​
-181
 ```
-182
-​
-183
+
 * (可选) 修改机型配置文件
-184
-​
-185
 ```shell
-186
 nano /opt/rt-n56u/trunk/configs/templates/PSG1218.config
-187
 ```
-188
-​
-189
+
 * 开始编译
-190
-​
-191
 ```shell
-192
 cd /opt/rt-n56u/trunk
-193
 # 对于WSL环境，建议使用sudo进行编译，或者使用fakeroot-tcp代替fakeroot
-194
 fakeroot ./build_firmware_modify PSG1218
-195
 # 脚本第一个参数为路由型号，在trunk/configs/templates/中
-196
 # 编译好的固件在trunk/images里
-197
 # 首次编译完成后，如果需要再次编译其它固件，需要执行清理脚本：
-198
 ./clear_tree
-199
 ```
-200
-​
-201
-***
-202
-​
-203
+
 ### 请参阅 ###
-204
 - https://www.jianshu.com/p/cb51fb0fb2ac
-205
 - https://www.jianshu.com/p/6b8403cdea46
