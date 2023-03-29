@@ -33,165 +33,266 @@ wifi密码
 - https://github.com/hanwckf/padavan-4.4
 - https://github.com/MeIsReallyBa/padavan-4.4
 
-
-
-
-
-Welcome to the rt-n56u project
-
-This project aims to improve the rt-n56u and other supported devices on the software part, allowing power user to take full control over their hardware. This project was created in hope to be useful, but comes without warranty or support. Installing it will probably void your warranty. Contributors of this project are not responsible for what happens next.
-
-How do I get set up?
-Get the tools to build the system or Download pre-built system image
-Feed the device with the system image file (Follow instructions of updating your current system)
-Perform factory reset
-Open web browser on http://my.router to configure the services
-Contribution guidelines
-To be completed
-特别说明
-汉化字典来自：https://github.com/gorden5566/padavan
-更新日志：https://www.jianshu.com/p/d76a63a12eae
-固件特点
-使用gorden5566的汉化字典
-aria2前端更换为AriaNg
-curl可选编译可执行程序 CONFIG_FIRMWARE_INCLUDE_CURL
-使用了PROMETHEUS提供的部分补丁
-使用了Linaro1985/padavan-ng的部分软件包
-可选以下插件：
-scutclient CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT
-gdut-drcom CONFIG_FIRMWARE_INCLUDE_GDUT_DRCOM
-dogcom CONFIG_FIRMWARE_INCLUDE_DOGCOM
-minieap CONFIG_FIRMWARE_INCLUDE_MINIEAP
-njit-client CONFIG_FIRMWARE_INCLUDE_NJIT_CLIENT
-napt66 CONFIG_FIRMWARE_INCLUDE_NAPT66
-softether-vpnserver CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_SERVER
-softether-vpnclient CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CLIENT
-softether-vpncmd CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CMD
-vlmcsd CONFIG_FIRMWARE_INCLUDE_VLMCSD
-ttyd CONFIG_FIRMWARE_INCLUDE_TTYD
-lrzsz CONFIG_FIRMWARE_INCLUDE_LRZSZ
-htop CONFIG_FIRMWARE_INCLUDE_HTOP
-nano CONFIG_FIRMWARE_INCLUDE_NANO
-iperf3 CONFIG_FIRMWARE_INCLUDE_IPERF3
-dump1090 CONFIG_FIRMWARE_INCLUDE_DUMP1090
-rtl-sdr CONFIG_FIRMWARE_INCLUDE_RTL_SDR
-samba3.6 CONFIG_FIRMWARE_INCLUDE_SMBD36
-mtr CONFIG_FIRMWARE_INCLUDE_MTR
-socat CONFIG_FIRMWARE_INCLUDE_SOCAT
-srelay CONFIG_FIRMWARE_INCLUDE_SRELAY
-3proxy CONFIG_FIRMWARE_INCLUDE_3PROXY
-mentohust CONFIG_FIRMWARE_INCLUDE_MENTOHUST
-frpc CONFIG_FIRMWARE_INCLUDE_FRPC
-frps CONFIG_FIRMWARE_INCLUDE_FRPS
-tunsafe CONFIG_FIRMWARE_INCLUDE_TUNSAFE
-wireguard-go CONFIG_FIRMWARE_INCLUDE_WIREGUARD
-smartdns CONFIG_FIRMWARE_INCLUDE_SMARTDNS
-已适配除官方适配外的以下机型
-PSG1208
-PSG1218
-5K-W20 (USB)
-OYE-001 (USB)
-NEWIFI-MINI (USB)
-MI-MINI (USB)
-MI-3 (USB)
-MI-3C
-MI-4
-MI-R3G (USB)
-MI-R4A
-MI-R3P (USB)
-HC5661A
-HC5761A (USB)
-HC5861B
-360P2 (USB)
-MI-NANO
-MZ-R13
-MZ-R13P
-RT-AC1200GU (USB)
-XY-C1 (USB)
-WR1200JS (USB)
-NEWIFI3 (USB)
-B70 (USB)
-A3004NS (USB)
-K2P
-K2P-USB (USB)
-JCG-836PRO (USB)
-JCG-AC860M (USB)
-DIR-882 (USB)
-DIR-878
-MR2600 (USB)
-WDR7300
-RM2100
-CR660x (CR6606, CR6608, CR6609)
-R2100
-JCG-Y2 (USB)
-E8820V2 (USB)
-ZTE_E8820S (USB)
-MSG1500 (USB)
-R6220 (USB)
-NETGEAR-CHJ (R6260, R6350, R6850, WAC124)
-NETGEAR-BZV (R6800, R6700-v2, R7200, Nighthawk AC2400)
-编译说明
-安装依赖包
+​
+26
+### 特别说明 ###
+27
+* 汉化字典来自：https://github.com/gorden5566/padavan
+28
+* 更新日志：https://www.jianshu.com/p/d76a63a12eae
+29
+​
+30
+***
+31
+​
+32
+### 固件特点 ###
+33
+- 使用[gorden5566](https://github.com/gorden5566/padavan)的汉化字典
+34
+- aria2前端更换为[AriaNg](https://github.com/mayswind/AriaNg)
+35
+- [curl](https://github.com/curl/curl)可选编译可执行程序 ```CONFIG_FIRMWARE_INCLUDE_CURL```
+36
+- 使用了[PROMETHEUS](http://pm.freize.net/index.html)提供的部分补丁
+37
+- 使用了[Linaro1985/padavan-ng](https://gitlab.com/padavan-ng/padavan-ng)的部分软件包
+38
+- 可选以下插件：
+39
+>- [scutclient](https://github.com/hanwckf/scutclient) ```CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT```
+40
+>- [gdut-drcom](https://github.com/chenhaowen01/gdut-drcom) ```CONFIG_FIRMWARE_INCLUDE_GDUT_DRCOM```
+41
+>- [dogcom](https://github.com/hanwckf/dogcom) ```CONFIG_FIRMWARE_INCLUDE_DOGCOM```
+42
+>- [minieap](https://github.com/hanwckf/minieap) ```CONFIG_FIRMWARE_INCLUDE_MINIEAP```
+43
+>- [njit-client](https://github.com/hanwckf/njit8021xclient) ```CONFIG_FIRMWARE_INCLUDE_NJIT_CLIENT```
+44
+>- [napt66](https://github.com/mzweilin/napt66) ```CONFIG_FIRMWARE_INCLUDE_NAPT66```
+45
+>- [softether-vpnserver](https://github.com/SoftEtherVPN/SoftEtherVPN_Stable) ```CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_SERVER```
+46
+>- [softether-vpnclient](https://github.com/SoftEtherVPN/SoftEtherVPN_Stable) ```CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CLIENT```
+47
+>- [softether-vpncmd](https://github.com/SoftEtherVPN/SoftEtherVPN_Stable) ```CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CMD```
+48
+>- [vlmcsd](https://github.com/hanwckf/vlmcsd) ```CONFIG_FIRMWARE_INCLUDE_VLMCSD```
+49
+>- [ttyd](https://github.com/tsl0922/ttyd) ```CONFIG_FIRMWARE_INCLUDE_TTYD```
+50
+>- [lrzsz](https://ohse.de/uwe/software/lrzsz.html) ```CONFIG_FIRMWARE_INCLUDE_LRZSZ```
+51
+>- [htop](https://hisham.hm/htop/releases/) ```CONFIG_FIRMWARE_INCLUDE_HTOP```
+52
+>- [nano](https://www.nano-editor.org/dist/) ```CONFIG_FIRMWARE_INCLUDE_NANO```
+53
+>- [iperf3](https://github.com/esnet/iperf) ```CONFIG_FIRMWARE_INCLUDE_IPERF3```
+54
+>- [dump1090](https://github.com/hanwckf/dump1090) ```CONFIG_FIRMWARE_INCLUDE_DUMP1090```
+55
+>- [rtl-sdr](https://github.com/osmocom/rtl-sdr) ```CONFIG_FIRMWARE_INCLUDE_RTL_SDR```
+56
+>- [samba3.6](https://gitlab.com/padavan-ng/padavan-ng/tree/master/trunk/user/samba36) ```CONFIG_FIRMWARE_INCLUDE_SMBD36```
+57
+>- [mtr](https://github.com/traviscross/mtr) ```CONFIG_FIRMWARE_INCLUDE_MTR```
+58
+>- [socat](http://www.dest-unreach.org/socat) ```CONFIG_FIRMWARE_INCLUDE_SOCAT```
+59
+>- [srelay](https://socks-relay.sourceforge.io) ```CONFIG_FIRMWARE_INCLUDE_SRELAY```
+60
+>- [3proxy](https://github.com/z3APA3A/3proxy) ```CONFIG_FIRMWARE_INCLUDE_3PROXY```
+61
+>- [mentohust](https://github.com/hanwckf/mentohust-1) ```CONFIG_FIRMWARE_INCLUDE_MENTOHUST```
+62
+>- [frpc](https://github.com/fatedier/frp) ```CONFIG_FIRMWARE_INCLUDE_FRPC```
+63
+>- [frps](https://github.com/fatedier/frp) ```CONFIG_FIRMWARE_INCLUDE_FRPS```
+64
+>- [tunsafe](https://github.com/TunSafe/TunSafe) ```CONFIG_FIRMWARE_INCLUDE_TUNSAFE```
+65
+>- [wireguard-go](https://git.zx2c4.com/wireguard-go/) ```CONFIG_FIRMWARE_INCLUDE_WIREGUARD```
+66
+>- [smartdns](https://github.com/pymumu/smartdns) ```CONFIG_FIRMWARE_INCLUDE_SMARTDNS```
+67
+​​
+117
+* 安装依赖包
+118
+​
+119
+```shell
+120
 # Debian/Ubuntu
+121
 sudo apt update
+122
 sudo apt install unzip libtool-bin curl cmake gperf gawk flex bison nano xxd \
-	fakeroot kmod cpio git python3-docutils gettext automake autopoint \
-	texinfo build-essential help2man pkg-config zlib1g-dev libgmp3-dev \
-	libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget libc-dev-bin
-
+123
+        fakeroot kmod cpio git python3-docutils gettext automake autopoint \
+124
+        texinfo build-essential help2man pkg-config zlib1g-dev libgmp3-dev \
+125
+        libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget libc-dev-bin
+126
+​
+127
 # Archlinux/Manjaro
+128
 sudo pacman -Syu --needed git base-devel cmake gperf ncurses libmpc \
+129
         gmp python-docutils vim rpcsvc-proto fakeroot cpio help2man
-
+130
+​
+131
 # Alpine
+132
 sudo apk add make gcc g++ cpio curl wget nano xxd kmod \
-	pkgconfig rpcgen fakeroot ncurses bash patch \
-	bsd-compat-headers python2 python3 zlib-dev \
-	automake gettext gettext-dev autoconf bison \
-	flex coreutils cmake git libtool gawk sudo
-
+133
+        pkgconfig rpcgen fakeroot ncurses bash patch \
+134
+        bsd-compat-headers python2 python3 zlib-dev \
+135
+        automake gettext gettext-dev autoconf bison \
+136
+        flex coreutils cmake git libtool gawk sudo
+137
+​
+138
 # CentOS 7
+139
 sudo yum update
+140
 sudo yum groupinstall "Development Tools"
+141
 sudo yum install ncurses-* flex byacc bison zlib-* texinfo gmp-* mpfr-* gettext \
-	libtool* libmpc-* gettext-* python-docutils nano help2man fakeroot
-
+142
+        libtool* libmpc-* gettext-* python-docutils nano help2man fakeroot
+143
+​
+144
 # CentOS 8
+145
 sudo yum update
+146
 sudo yum groupinstall "Development Tools"
+147
 sudo yum install ncurses-* flex byacc bison zlib-* gmp-* mpfr-* gettext \
-	libtool* libmpc-* gettext-* nano fakeroot
-
+148
+        libtool* libmpc-* gettext-* nano fakeroot
+149
+​
+150
 # CentOS 8不能直接通过yum安装texinfo，help2man，python-docutils。请去官网下载发行的安装包编译安装
+151
 # 以texinfo为例
+152
 # cd /usr/local/src
+153
 # sudo wget http://ftp.gnu.org/gnu/texinfo/texinfo-6.7.tar.gz
+154
 # sudo tar zxvf texinfo-6.7.tar.gz
+155
 # cd texinfo-6.7
+156
 # sudo ./configure
+157
 # sudo make
+158
 # sudo make install
-克隆源码git clone --depth=1 https://github.com/Yutsuki92/vb1980-Padavan3.4.git /opt/rt-n56u
-准备工具链
+159
+​
+160
+```
+161
+​​
+162
+* 克隆源码
+163
+​
+164
+```shell
+165
+git clone --depth=1 https://e.coding.net/hanwckf/rt-n56u/padavan.git /opt/rt-n56u
+166
+#git clone --depth=1 https://github.com/hanwckf/rt-n56u.git /opt/rt-n56u
+167
+```
+168
+​
+169
+* 准备工具链
+170
+​
+171
+```shell
+172
 cd /opt/rt-n56u/toolchain-mipsel
-
+173
+​
+174
 # （推荐）使用脚本下载预编译的工具链：
+175
 sh dl_toolchain.sh
-
+176
+​
+177
 # 或者，也可以从源码编译工具链，这需要一些时间：
+178
 ./clean_toolchain
+179
 ./build_toolchain
-(可选) 修改机型配置文件
+180
+​
+181
+```
+182
+​
+183
+* (可选) 修改机型配置文件
+184
+​
+185
+```shell
+186
 nano /opt/rt-n56u/trunk/configs/templates/PSG1218.config
-开始编译
+187
+```
+188
+​
+189
+* 开始编译
+190
+​
+191
+```shell
+192
 cd /opt/rt-n56u/trunk
+193
 # 对于WSL环境，建议使用sudo进行编译，或者使用fakeroot-tcp代替fakeroot
+194
 fakeroot ./build_firmware_modify PSG1218
+195
 # 脚本第一个参数为路由型号，在trunk/configs/templates/中
+196
 # 编译好的固件在trunk/images里
+197
 # 首次编译完成后，如果需要再次编译其它固件，需要执行清理脚本：
+198
 ./clear_tree
-请参阅
-https://www.jianshu.com/p/cb51fb0fb2ac
-https://www.jianshu.com/p/6b8403cdea46
-
+199
+```
+200
+​
+201
+***
+202
+​
+203
+### 请参阅 ###
+204
+- https://www.jianshu.com/p/cb51fb0fb2ac
+205
+- https://www.jianshu.com/p/6b8403cdea46
