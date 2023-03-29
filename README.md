@@ -118,12 +118,12 @@ sudo yum install ncurses-* flex byacc bison zlib-* gmp-* mpfr-* gettext \
 
 * 克隆源码
 ```shell
-sudo git clone --depth=1 https://github.com/Yutsuki92/vb1980-Padavan3.4.git /opt/rt-n56u
+sudo git clone --depth=1 https://github.com/Yutsuki92/vb1980-Padavan3.4.git
 ```
 
 * 准备工具链
 ```shell
-cd /opt/rt-n56u/toolchain-mipsel
+cd vb1980-Padavan3.4/toolchain-mipsel
 # （推荐）使用脚本下载预编译的工具链：
 sh dl_toolchain.sh
 # 或者，也可以从源码编译工具链，这需要一些时间：
@@ -131,14 +131,9 @@ sh dl_toolchain.sh
 ./build_toolchain
 ```
 
-* (可选) 修改机型配置文件
-```shell
-nano /opt/rt-n56u/trunk/configs/templates/PSG1218.config
-```
-
 * 开始编译
 ```shell
-cd /opt/rt-n56u/trunk
+cd vb1980-Padavan3.4/trunk
 # 对于WSL环境，建议使用sudo进行编译，或者使用fakeroot-tcp代替fakeroot
 fakeroot ./build_firmware_modify K2P
 # 脚本第一个参数为路由型号，在trunk/configs/templates/中
