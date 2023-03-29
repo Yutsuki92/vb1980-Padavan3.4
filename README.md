@@ -118,7 +118,7 @@ sudo yum install ncurses-* flex byacc bison zlib-* gmp-* mpfr-* gettext \
 
 * 克隆源码
 ```shell
-sudo git clone --depth=1 https://github.com/Yutsuki92/vb1980-Padavan3.4.git
+git clone --depth=1 https://github.com/Yutsuki92/vb1980-Padavan3.4.git
 ```
 
 * 准备工具链
